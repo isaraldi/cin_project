@@ -40,3 +40,7 @@ sites/simpletest
 
 # Ignore multi-site test environment.
 # simpletest
+
+# Ingnore idea folder.
+.idea/*
+.idea/*/
