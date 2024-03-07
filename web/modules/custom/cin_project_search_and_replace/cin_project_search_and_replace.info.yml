@@ -1,0 +1,5 @@
+name: Search and Replace
+type: module
+core_version_requirement: ^10
+description: Search and Replace module.
+package: Custom

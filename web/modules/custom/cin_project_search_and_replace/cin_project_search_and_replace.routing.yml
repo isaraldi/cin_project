@@ -1,0 +1,8 @@
+
+cin_project_search_and_replace.search_and_replace:
+  path: '/cin-project-search-and-replace/search-and-replace'
+  defaults:
+    _title: 'Search And Replace'
+    _form: 'Drupal\cin_project_search_and_replace\Form\SearchAndReplaceForm'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,5 @@
+name: Core
+type: module
+core_version_requirement: ^10
+description: 'Core functionality for the CIN project.'
+package: Custom
