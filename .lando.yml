@@ -43,6 +43,8 @@ proxy:
     - mailhog.cin_project.local.com
 events:
   post-db-import:
+    - echo "Running composer install."
+    - appserver: cd "${LANDO_WEBROOT}" && composer install
     - echo "Clearing site cache."
     - appserver: cd "${LANDO_WEBROOT}" && drush cr > /dev/null
     - appserver: cd "${LANDO_WEBROOT}" && drush pm:en admin_toolbar, admin_toolbar_tools, admin_toolbar_search, cin_project_core, cin_project_search_and_replace, gin_toolbar  -y
