@@ -18,8 +18,9 @@
 /vendor/
 
 # Ignore configuration files that may contain sensitive information.
-sites/*/settings*.php
-sites/*/services*.yml
+/web/sites/*/services*.yml
+/web/modules/contrib
+/web/themes/contrib
 
 # Ignore paths that contain user-generated content.
 /web/sites/*/files/
