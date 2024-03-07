@@ -22,8 +22,7 @@ sites/*/settings*.php
 sites/*/services*.yml
 
 # Ignore paths that contain user-generated content.
-sites/*/files
-sites/*/private
+/web/sites/*/files/
 
 # Ignore multi-site test environment.
 sites/simpletest
@@ -32,7 +31,7 @@ sites/simpletest
 # or delete the previous settings and uncomment the following ones, instead.
 
 # Ignore configuration files that may contain sensitive information.
-*/settings.lando.php
+settings.lando.php
 
 # Ignore paths that contain user-generated content.
 */files
