@@ -43,4 +43,3 @@ sites/simpletest
 
 # Ingnore idea folder.
 .idea/*
-.idea/*/
