@@ -1,0 +1,43 @@
+name: cin-project
+recipe: drupal10
+config:
+  webroot: web
+  php: "8.2"
+  via: nginx:1.16
+  database: mysql:8.0
+  drush: 10.6.0
+  xdebug: true
+  config:
+    vhosts: .lando/nginx/cin_project.local.com
+    php: .lando/php/php.ini
+tooling:
+  drush:
+    service: appserver
+    cmd: drush --root=/app/web -l cin_project.local.com
+services:
+  appserver:
+    composer_version: 2.3.0
+    overrides:
+      environment:
+        PHP_IDE_CONFIG: "serverName=localhost"
+  pma:
+    type: phpmyadmin:5.0
+    hosts: [ database ]
+  mailhog:
+    type: mailhog:v1.0.0
+    portforward: true
+    hogfrom:
+      - appserver
+  solr:
+    type: solr:8
+    portforward: true
+    core: cin_project
+    config:
+      dir: .lando/solr
+proxy:
+  appserver_nginx:
+    - cin_project.local.com
+  pma:
+    - pma.cin_project.local.com
+  mailhog:
+    - mailhog.cin_project.local.com
