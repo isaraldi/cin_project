@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - cin_project_search_and_replace
+    - node
+id: search_and_replace
+label: 'Search and Replace'
+type: node
+plugin: search_and_replace
+configuration: {  }
