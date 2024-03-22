@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function cin_project_search_and_replace_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'views_form_content_page_1') {
+    $form['header']['node_bulk_form']['replace'] = [
+      '#type' => 'textfield',
+      '#placeholder' => t('Replace'),
+      '#attributes' => ['size' => 10],
+      '#states' => [
+        'visible' => [
+          ':input[name="action"]' => ['value' => 'search_and_replace'],
+        ],
+      ],
+    ];
+  }
+
+}

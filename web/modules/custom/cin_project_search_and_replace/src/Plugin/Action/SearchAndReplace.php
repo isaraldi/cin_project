@@ -46,7 +46,7 @@ final class SearchAndReplace extends EntityActionBase {
    * {@inheritdoc}
    */
   public function execute(ContentEntityInterface $entity = NULL): void {
-
+    $a = $entity;
   }
 
 }
